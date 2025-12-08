@@ -1,148 +1,270 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Ridhan Hidayat</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ridhan Hidayat</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<style>
+/* ------------------------------
+          ROOT
+------------------------------ */
+:root {
+    --primary: #0a84ff;
+    --bg-dark: #0d0d0d;
+    --bg-light: #f3f3f3;
+    --text-dark: #ffffff;
+    --text-light: #111111;
+
+    --shadow-glow: 0 0 18px rgba(10,132,255,0.5);
+    --glass: rgba(255,255,255,0.05);
+}
+
+/* Light Mode Variables */
+.light {
+    --bg-dark: #f7f7f7;
+    --text-dark: #0a0a0a;
+    --glass: rgba(0,0,0,0.05);
+}
+
+/* ------------------------------
+         GLOBAL STYLE
+------------------------------ */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-dark);
+    transition: background 0.4s ease, color 0.4s ease;
+    scroll-behavior: smooth;
+}
+
+/* ------------------------------
+            HEADER
+------------------------------ */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--glass);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+header h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.theme-toggle {
+    background: var(--primary);
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    box-shadow: var(--shadow-glow);
+    transition: 0.3s;
+}
+.theme-toggle:hover {
+    transform: scale(1.08);
+}
+
+/* ------------------------------
+             HERO
+------------------------------ */
+.hero {
+    text-align: center;
+    padding: 55px 25px 20px;
+}
+
+.hero h2 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.hero h2 span {
+    color: var(--primary);
+    text-shadow: var(--shadow-glow);
+}
+
+.sub {
+    font-size: 1.15rem;
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+/* ------------------------------
+             AUDIO
+------------------------------ */
+.audio-wrap {
+    margin: 28px auto;
+    max-width: 350px;
+}
+audio {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ------------------------------
+         BUTTON GROUP
+------------------------------ */
+.btn-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    background: var(--primary);
+    padding: 14px 26px;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s;
+    box-shadow: var(--shadow-glow);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(10,132,255,0.8);
+}
+
+/* Floating Hire Me Button */
+.hire-float {
+    position: fixed;
+    bottom: 25px;
+    right: 22px;
+    background: var(--primary);
+    padding: 15px 22px;
+    border-radius: 14px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: var(--shadow-glow);
+    z-index: 999;
+    transition: 0.3s;
+}
+.hire-float:hover {
+    transform: scale(1.07);
+}
+
+/* ------------------------------
+          PROFILE SECTION
+------------------------------ */
+.profile {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+.profile h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.profile-img {
+    width: 85%;
+    max-width: 330px;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    box-shadow: var(--shadow-glow);
+    margin: auto;
+    display: block;
+    background: #1b1b1b;
+}
+
+/* ------------------------------
+             FOOTER
+------------------------------ */
+footer {
+    text-align: center;
+    padding: 35px 0 50px;
+    opacity: 0.65;
+    font-size: 0.9rem;
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">Ridhan Hidayat<span>.</span></div>
-        <ul class="nav-menu">
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#skills">Skill</a></li>
-            <li><a href="#projects">Projek</a></li>
-            <li><a href="#experience">Pengalaman</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
+<!-- HEADER -->
+<header data-aos="fade-down" data-aos-duration="700">
+    <h1>Ridhan Hidayat<span style="color: var(--primary)">.</span></h1>
+    <div class="theme-toggle" onclick="toggleTheme()">🌗</div>
+</header>
 
-        <button id="modeToggle" class="mode-btn">🌙</button>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-        <div class="hero-left">
-            <h1>Halo, Saya <span>Ridhan Hidayat</span></h1>
-            <p class="subtitle">Web Developer • UI/UX Designer • IT Enthusiast</p>
+<!-- HERO -->
+<section class="hero" data-aos="fade-up" data-aos-duration="900">
+    <h2>Halo, Saya<br><span>Ridhan Hidayat</span></h2>
+    <div class="sub" data-aos="fade-up" data-aos-delay="200">Web Developer • UI/UX Designer • IT Enthusiast</div>
 
-            <audio controls class="audio-intro">
-                <source src="audio.mp3">
-            </audio>
+    <div class="audio-wrap" data-aos="zoom-in" data-aos-delay="350">
+        <audio controls>
+            <source src="audio.mp3" type="audio/mp3">
+        </audio>
+    </div>
 
-            <a href="#contact" class="btn-primary">Hire Me</a>
-        </div>
+    <div class="btn-group" data-aos="fade-up" data-aos-delay="500">
+        <a class="btn" href="#profile">Me</a>
+        <a class="btn" href="mailto:email@gmail.com">Hire Me</a>
+    </div>
+</section>
 
-        <div class="hero-right">
-            <img src="foto-profil.jpg" class="profile-img" alt="Foto Profil">
-        </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="about">
-        <h2 class="section-title">Tentang Saya</h2>
-        <p class="about-text">
-            Saya seorang mahasiswa Teknik Informatika yang fokus pada Web Development modern 
-            dan UI/UX. Saya memiliki ketertarikan dalam membuat aplikasi web yang cepat, minimalis, 
-            dan mudah digunakan.
-        </p>
+<!-- PROFILE SECTION -->
+<section id="profile" class="profile" data-aos="fade-up" data-aos-duration="1000">
+    <h3 data-aos="fade-right">Foto Profil</h3>
+    <img src="foto.jpg" class="profile-img" alt="Foto Profil" data-aos="zoom-in" data-aos-delay="200">
+</section>
 
-        <video controls class="about-video">
-            <source src="video.mp4" type="video/mp4">
-        </video>
-    </section>
 
-    <!-- SKILL SECTION -->
-    <section id="skills" class="skills">
-        <h2 class="section-title">Skill & Keahlian</h2>
+<!-- FLOATING BUTTON -->
+<a href="mailto:email@gmail.com" class="hire-float" data-aos="zoom-in">
+    Hire Me
+</a>
 
-        <div class="skill-bar">
-            <p>HTML/CSS</p>
-            <div class="bar"><span style="width: 90%"></span></div>
-        </div>
 
-        <div class="skill-bar">
-            <p>JavaScript</p>
-            <div class="bar"><span style="width: 75%"></span></div>
-        </div>
+<!-- FOOTER -->
+<footer data-aos="fade-up" data-aos-duration="800">
+    🔒 ridhhhhh.github.io
+</footer>
 
-        <div class="skill-bar">
-            <p>UI/UX</p>
-            <div class="bar"><span style="width: 70%"></span></div>
-        </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-        <h2 class="section-title">Projek Terbaik Saya</h2>
+<!-- JS THEME SWITCH -->
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("light");
+}
+</script>
 
-        <div class="project-container">
+<!-- AOS SCRIPT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({
+    duration: 900,
+    once: true,
+});
+</script>
 
-            <div class="project-card">
-                <img src="project1.jpg" alt="">
-                <h3>Company Profile Website</h3>
-                <p>Website modern untuk profile perusahaan.</p>
-                <a href="#" class="btn-secondary">Detail</a>
-            </div>
-
-            <div class="project-card">
-                <img src="project2.jpg" alt="">
-                <h3>To-Do List App</h3>
-                <p>Aplikasi produktivitas dengan CRUD JavaScript.</p>
-                <a href="#" class="btn-secondary">Detail</a>
-            </div>
-
-            <div class="project-card">
-                <img src="project3.jpg" alt="">
-                <h3>Landing Page Modern</h3>
-                <p>Landing page responsif dengan animasi.</p>
-                <a href="#" class="btn-secondary">Detail</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- EXPERIENCE TABLE -->
-    <section id="experience" class="experience">
-        <h2 class="section-title">Pengalaman</h2>
-
-        <table>
-            <tr>
-                <th>Periode</th>
-                <th>Posisi</th>
-                <th>Deskripsi</th>
-            </tr>
-            <tr>
-                <td>2023</td>
-                <td>Web Developer</td>
-                <td>Membangun website portfolio responsif.</td>
-            </tr>
-            <tr>
-                <td>2024</td>
-                <td>UI/UX Designer</td>
-                <td>Mendesain aplikasi mobile modern.</td>
-            </tr>
-        </table>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Kontak Saya</h2>
-
-        <form onsubmit="return sendMessage()" class="contact-form">
-            <input type="text" id="name" placeholder="Nama Anda" required>
-            <input type="email" id="email" placeholder="Email Anda" required>
-            <textarea id="message" placeholder="Tulis pesan..." required></textarea>
-            <button type="submit" class="btn-primary">Kirim Pesan</button>
-        </form>
-
-        <p id="success"></p>
-    </section>
-
-    <script src="script.js"></script>
 </body>
 </html>
