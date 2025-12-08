@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Ridhan Hidayat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Ridhan Hidayat<span>.</span></div>
+        <ul class="nav-menu">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#skills">Skill</a></li>
+            <li><a href="#projects">Projek</a></li>
+            <li><a href="#experience">Pengalaman</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+
+        <button id="modeToggle" class="mode-btn">🌙</button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-left">
+            <h1>Halo, Saya <span>Ridhan Hidayat</span></h1>
+            <p class="subtitle">Web Developer • UI/UX Designer • IT Enthusiast</p>
+
+            <audio controls class="audio-intro">
+                <source src="audio.mp3">
+            </audio>
+
+            <a href="#contact" class="btn-primary">Hire Me</a>
+        </div>
+
+        <div class="hero-right">
+            <img src="foto-profil.jpg" class="profile-img" alt="Foto Profil">
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2 class="section-title">Tentang Saya</h2>
+        <p class="about-text">
+            Saya seorang mahasiswa Teknik Informatika yang fokus pada Web Development modern 
+            dan UI/UX. Saya memiliki ketertarikan dalam membuat aplikasi web yang cepat, minimalis, 
+            dan mudah digunakan.
+        </p>
+
+        <video controls class="about-video">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- SKILL SECTION -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skill & Keahlian</h2>
+
+        <div class="skill-bar">
+            <p>HTML/CSS</p>
+            <div class="bar"><span style="width: 90%"></span></div>
+        </div>
+
+        <div class="skill-bar">
+            <p>JavaScript</p>
+            <div class="bar"><span style="width: 75%"></span></div>
+        </div>
+
+        <div class="skill-bar">
+            <p>UI/UX</p>
+            <div class="bar"><span style="width: 70%"></span></div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projek Terbaik Saya</h2>
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <img src="project1.jpg" alt="">
+                <h3>Company Profile Website</h3>
+                <p>Website modern untuk profile perusahaan.</p>
+                <a href="#" class="btn-secondary">Detail</a>
+            </div>
+
+            <div class="project-card">
+                <img src="project2.jpg" alt="">
+                <h3>To-Do List App</h3>
+                <p>Aplikasi produktivitas dengan CRUD JavaScript.</p>
+                <a href="#" class="btn-secondary">Detail</a>
+            </div>
+
+            <div class="project-card">
+                <img src="project3.jpg" alt="">
+                <h3>Landing Page Modern</h3>
+                <p>Landing page responsif dengan animasi.</p>
+                <a href="#" class="btn-secondary">Detail</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXPERIENCE TABLE -->
+    <section id="experience" class="experience">
+        <h2 class="section-title">Pengalaman</h2>
+
+        <table>
+            <tr>
+                <th>Periode</th>
+                <th>Posisi</th>
+                <th>Deskripsi</th>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>Web Developer</td>
+                <td>Membangun website portfolio responsif.</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>UI/UX Designer</td>
+                <td>Mendesain aplikasi mobile modern.</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Kontak Saya</h2>
+
+        <form onsubmit="return sendMessage()" class="contact-form">
+            <input type="text" id="name" placeholder="Nama Anda" required>
+            <input type="email" id="email" placeholder="Email Anda" required>
+            <textarea id="message" placeholder="Tulis pesan..." required></textarea>
+            <button type="submit" class="btn-primary">Kirim Pesan</button>
+        </form>
+
+        <p id="success"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
